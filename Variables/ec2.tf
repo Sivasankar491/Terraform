@@ -1,5 +1,6 @@
 resource "aws_instance" "test" {
     ami = var.ami_id
+    count = 3
     instance_type = var.instance_type
     #vpc_security_group_ids = [aws_security_group.ssh.id]
     vpc_security_group_ids = [aws_security_group.allow_ssh_terraform.id]
