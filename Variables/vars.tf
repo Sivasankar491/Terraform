@@ -19,9 +19,12 @@ variable "protocol" {
 }
 
 variable "tags" {
-
     default = {
         Name = "Backend"
-    }
-  
+    }  
+}
+
+variable "ip_range" {
+    type = list(string)
+    default = [ "0.0.0.0/0" ]
 }
