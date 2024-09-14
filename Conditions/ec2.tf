@@ -1,6 +1,6 @@
 resource "aws_instance" "terraform" {
     ami = var.ami_id
-    instance_type = var.instance_names[count.index] == "MySQL" ? "t2.medium" : "t2.micro"
+    instance_type = var.instance_names[count.index] == "MySQL" ? "t3.micro" : "t2.micro"
     count = length(var.instance_names)
     vpc_security_group_ids = [aws_security_group.allow_ssh.id]
     tags = {
