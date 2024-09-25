@@ -5,6 +5,7 @@ resource "aws_instance" "expense" {
   instance_type          = each.value
   tags = merge(
     var.common_tags,
+    local.common_tags,
     {
       Name = each.key
     }
@@ -33,6 +34,7 @@ resource "aws_security_group" "expense_sg" {
 
   tags = merge(
     var.common_tags,
+    local.common_tags,
     {
       Name = "allow-ssh"
     }

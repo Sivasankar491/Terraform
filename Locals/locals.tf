@@ -1,6 +1,6 @@
 locals {
   common_tags = {
-    Project = "UAT"
+    Project = "Expense-UAT"
   }
 }
 
